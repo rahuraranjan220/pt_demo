@@ -1,0 +1,74 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_inputdemo_002",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_inputdemo_002",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          cms_certification_num as string,",
+				"          name as string,",
+				"          address as string,",
+				"          city as string,",
+				"          state as string,",
+				"          zip5 as string,",
+				"          beds as string,",
+				"          phone_number as string,",
+				"          homepage_url as string,",
+				"          chargemaster_url as string,",
+				"          last_edited_by_username as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          cms_certification_num as string,",
+				"          name as string,",
+				"          address as string,",
+				"          city as string,",
+				"          state as string,",
+				"          zip5 as string,",
+				"          beds as string,",
+				"          phone_number as string,",
+				"          homepage_url as string,",
+				"          chargemaster_url as string,",
+				"          last_edited_by_username as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          cms_certification_num,",
+				"          name,",
+				"          address,",
+				"          city,",
+				"          state,",
+				"          zip5,",
+				"          beds,",
+				"          phone_number,",
+				"          homepage_url,",
+				"          chargemaster_url",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
