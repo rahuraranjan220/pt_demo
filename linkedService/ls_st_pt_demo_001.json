@@ -1,0 +1,12 @@
+{
+	"name": "ls_st_pt_demo_001",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=stptdemo001;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDQzRjE5RURDLTBDOTYtNERBQS04OUE3LTQ2OEY0QzFCRkNFMl9lMTA4NDU2Mi0xOGMwLTQxNmUtYTA3Yy05OGFiY2UyNjAxYWMiDQp9"
+		}
+	}
+}
